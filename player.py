@@ -4,7 +4,7 @@ from background import *
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        self.forward_image = pygame.image.load("../assets/sprites/thief.png")
+        self.forward_image = pygame.image.load("assets/sprites/thief.png")
         self.reverse_image = pygame.transform.flip(self.forward_image, True, False)
         self.image = self.forward_image
         self.rect = self.image.get_rect()

@@ -20,16 +20,16 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('THI3F')
 
 #load our game font
-custom_font = pygame.font.Font("../assets/fonts/Black_Crayon.ttf", 50)
+custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 50)
 
 #define a function to draw background
 
 def draw_background(lvl1):
     #load our tiles
-    sky = pygame.image.load("../assets/sprites/starrynight.jpg").convert()
-    grass = pygame.image.load("../assets/sprites/mapTile_007.png").convert()
-    grasssquare = pygame.image.load("../assets/sprites/mapTile_010.png").convert()
-    outterbank = pygame.image.load("../assets/sprites/bank.png").convert()
+    sky = pygame.image.load("assets/sprites/starrynight.jpg").convert()
+    grass = pygame.image.load("assets/sprites/mapTile_007.png").convert()
+    grasssquare = pygame.image.load("assets/sprites/mapTile_010.png").convert()
+    outterbank = pygame.image.load("assets/sprites/bank.png").convert()
     #use png transparency
     grass.set_colorkey((0,0,0))
     outterbank.set_colorkey((0,0,0))
