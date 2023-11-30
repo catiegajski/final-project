@@ -21,6 +21,10 @@ pygame.display.set_caption('THI3F')
 
 #load our game font
 custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 50)
+##Creating a countdown timer
+timer_value = 30
+timer_color = (255,0,0)
+prev_seconds = pygame.time.get_ticks()
 
 #define a function to draw background
 
@@ -56,7 +60,6 @@ def draw_background(lvl1):
     #draw the text
         text = custom_font.render("THI3F", True, (255, 0, 0))
         lvl1.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, (SCREEN_HEIGHT-550)-text.get_height()/2))
-
 def add_enemies(num_ememies):
     for _ in range(num_ememies):
         enemies.add(Enemy(random.randint(SCREEN_WIDTH, SCREEN_WIDTH +20),
