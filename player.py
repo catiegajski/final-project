@@ -8,6 +8,7 @@ class Player(pygame.sprite.Sprite):
         self.reverse_image = pygame.transform.flip(self.forward_image, True, False)
         self.image = self.forward_image
         self.rect = self.image.get_rect()
+        self.rect = self.rect.inflate(-150, -100)
         self.x = x
         self.y = y
         self.rect.center = (x, y)
@@ -47,7 +48,7 @@ class Player(pygame.sprite.Sprite):
             self.y = SCREEN_HEIGHT - 2*TILE_SIZE
         self.rect.x = self.x
         self.rect.y = self.y
-        #self.rect.center = (self.x, self.y)
+        self.rect.center = (self.x, self.y)
 
     def draw(self, lvl1):
         lvl1.blit(self.image, self.rect)

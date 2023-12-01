@@ -11,8 +11,10 @@ class Enemy(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.image.load("assets/sprites/cop.png").convert()
         self.image.set_colorkey((0, 0, 0))
+        self.image = pygame.transform.scale(self.image, (125,125))
         self.image = pygame.transform.flip(self.image, True, False)
         self.rect = self.image.get_rect()
+        self.rect = self.rect.inflate(-124, -124)
         self.x = x
         self.y = y
         self.speed = random.uniform(MIN_SPEED, MAX_SPEED)

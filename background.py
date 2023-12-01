@@ -22,7 +22,7 @@ pygame.display.set_caption('THI3F')
 #load our game font
 custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 50)
 ##Creating a countdown timer
-timer_value = 30
+timer_value = 35
 timer_color = (255,0,0)
 prev_seconds = pygame.time.get_ticks()
 
