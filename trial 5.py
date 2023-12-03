@@ -12,10 +12,7 @@ lvl1 = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Adding a player on the screen')
 backgroundmusic = pygame.mixer.Sound("assets/sound/The-Pink-Panther-Theme-Song.mp3")
 
-#Adding lives
-lives =  2
-
-
+message = custom_font.render("GAME OVER", True, (0, 0, 0))
 
 #clock object
 clock = pygame.time.Clock()
@@ -26,7 +23,7 @@ add_enemies(4)
 running = True
 background = screen.copy()
 draw_background(background)
-while lives>0 and running:
+while running:
     milliseconds = pygame.time.get_ticks()
     elapsed_seconds = (milliseconds - prev_seconds) // 1000
     caught = pygame.sprite.spritecollide(player, enemies, True)
@@ -55,13 +52,14 @@ while lives>0 and running:
     if elapsed_seconds > timer_value:
         running = False
     if caught:
-        running = False
+        pygame.mixer.Sound.play(caught_sound)
+        lvl1.blit(message,(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
+   ##
     pygame.mixer.Sound.play(backgroundmusic)
     lvl1.blit(background, (0, 0))
-    timer_text = custom_font.render(f"Time left: {timer_value}", True,timer_color )
-    text_rect = timer_text.get_rect(center=(SCREEN_WIDTH-950, SCREEN_HEIGHT-550))
+    timer_text = custom_font.render(f"Time left: {timer_value}", True, timer_color)
+    text_rect = timer_text.get_rect(center=(SCREEN_WIDTH - 950, SCREEN_HEIGHT - 550))
     lvl1.blit(timer_text, text_rect)
-
     player.update()
     enemies.update()
     player.draw(screen)

@@ -38,14 +38,17 @@ class Player(pygame.sprite.Sprite):
         self.x += self.x_speed
         self.y += self.y_speed #sets the self.y_speed to 0 if non-arrow keys pressed
         #print(self.x, self.y)
-        if self.x > SCREEN_WIDTH- TILE_SIZE:
-            self.x = SCREEN_WIDTH - TILE_SIZE
+        if self.x > SCREEN_WIDTH- 2*TILE_SIZE:
+            self.x = SCREEN_WIDTH - 2*TILE_SIZE
         if self.x < 0:
             self.x = 0
         if self.y < 0:
             self.y = 0
-        if self.y > SCREEN_HEIGHT - 2*TILE_SIZE:
-            self.y = SCREEN_HEIGHT - 2*TILE_SIZE
+        if self.y > SCREEN_HEIGHT - TILE_SIZE :
+            self.y = (SCREEN_HEIGHT-TILE_SIZE)
+        #Doug Moloney Helped me limit the top restriction :)
+        if self.y < SCREEN_HEIGHT-5*TILE_SIZE:
+            self.y = (SCREEN_HEIGHT-5*TILE_SIZE)
         self.rect.x = self.x
         self.rect.y = self.y
         self.rect.center = (self.x, self.y)

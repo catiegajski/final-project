@@ -24,6 +24,7 @@ class Enemy(pygame.sprite.Sprite):
         self.x -= self.speed
         self.rect.x = self.x
 
+
     def draw(self, lvl1):
         lvl1.blit(self.image, self.rect)
 

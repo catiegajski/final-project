@@ -2,7 +2,7 @@ import random
 
 import pygame
 import sys
-from cops import Enemy, enemies
+from cops import *
 
 #Initialize pygame
 pygame.init()
@@ -19,8 +19,11 @@ PLAYER_SPEED = 5.0
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('THI3F')
 
+caught_sound = pygame.mixer.Sound("assets/sound/caught.mp3")
+
 #load our game font
 custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 50)
+score_font = pygame.font.Font("assets/fonts/branda-font.zip", 48)
 ##Creating a countdown timer
 timer_value = 35
 timer_color = (255,0,0)
@@ -64,9 +67,6 @@ def add_enemies(num_ememies):
     for _ in range(num_ememies):
         enemies.add(Enemy(random.randint(SCREEN_WIDTH, SCREEN_WIDTH +20),
                         random.randint(TILE_SIZE, SCREEN_HEIGHT - 2 * TILE_SIZE)))
-
-
-
 
 
 
