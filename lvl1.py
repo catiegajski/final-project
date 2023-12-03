@@ -4,6 +4,7 @@ import sys
 from background import *
 from player import Player
 from cops import enemies
+#from lvl2 import *
 
 pygame.init()
 
@@ -53,6 +54,8 @@ while lives > 0 and running:
     if caught:
         pygame.mixer.Sound.play(caught_sound)
         lives -= len(caught)
+    if player.x == SCREEN_WIDTH - 2*TILE_SIZE:
+        from lvl2 import *
     for ops in enemies:
         if ops.rect.x < -ops.rect.width:  # use the tile size
             enemies.remove(ops)  # remove the fish from the sprite group

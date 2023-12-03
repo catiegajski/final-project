@@ -15,6 +15,7 @@ MIN_SPEED = 0.5
 MAX_SPEED = 3.0
 PLAYER_SPEED = 5.0
 
+lives = 100
 #create screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('THI3F')

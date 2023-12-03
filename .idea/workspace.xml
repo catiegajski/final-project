@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0d1c20a-3dc1-4063-bbf8-9c83f89bff1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/background_lvl2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/money.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trial 6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lvl1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lvl2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/money.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/money.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cops.py" beforeDir="false" afterPath="$PROJECT_DIR$/cops.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background_lvl2.py" beforeDir="false" afterPath="$PROJECT_DIR$/background_lvl2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trial 5.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial 5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial 6.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial 6.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +60,5 @@
       <updated>1701282860091</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/trial 5.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
