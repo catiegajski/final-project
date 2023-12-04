@@ -3,6 +3,7 @@ import random
 import pygame
 import sys
 from cops import *
+from rock import *
 
 #Initialize pygame
 pygame.init()
@@ -11,11 +12,21 @@ SCREEN_WIDTH = 1100
 SCREEN_HEIGHT = 600
 TILE_SIZE = 64
 
+startmenu = pygame.display.set_mode((1100, 600))
+pygame.display.set_caption('Pygame Start Menu')
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+
+font = pygame.font.Font(None, 36)
+small_font = pygame.font.Font(None, 24)
+
 MIN_SPEED = 0.5
 MAX_SPEED = 3.0
 PLAYER_SPEED = 5.0
 
-lives = 100
+lives = 3
 #create screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('THI3F')
@@ -68,6 +79,42 @@ def add_enemies(num_ememies):
     for _ in range(num_ememies):
         enemies.add(Enemy(random.randint(SCREEN_WIDTH, SCREEN_WIDTH +20),
                         random.randint(TILE_SIZE, SCREEN_HEIGHT - 2 * TILE_SIZE)))
+def add_rocks(num_rocks):
+    for _ in range(num_rocks):
+        rocks.add(Rock(random.randint(SCREEN_WIDTH, SCREEN_WIDTH +20),
+                        random.randint(TILE_SIZE, SCREEN_HEIGHT - 2 * TILE_SIZE)))
+def draw_text(text, font, color, surface, x, y):
+    text_obj = font.render(text, True, color)
+    text_rect = text_obj.get_rect()
+    text_rect.topleft = (x, y)
+    surface.blit(text_obj, text_rect)
+def start_menu():
+    while True:
+        startmenu.fill(RED)
+        draw_text('Start Menu', font, BLACK, startmenu, 500, 50)
 
+        mouse_pos = pygame.mouse.get_pos()
 
+        # Start Game button
+        start_game_rect = pygame.Rect(475, 200, 200, 50)
+        pygame.draw.rect(startmenu, WHITE, start_game_rect)
+        draw_text('Start Game', font, BLACK, startmenu, 510, 215)
 
+        # Quit button
+        quit_rect = pygame.Rect(475, 300, 200, 50)
+        pygame.draw.rect(startmenu, WHITE, quit_rect)
+        draw_text('Quit', font, BLACK, startmenu, 530, 310)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if start_game_rect.collidepoint(mouse_pos):
+                    # Start the game (replace this with your game logic)
+                    print("Starting the game!")
+                elif quit_rect.collidepoint(mouse_pos):
+                    pygame.quit()
+                    sys.exit()
+
+        pygame.display.update()

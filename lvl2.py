@@ -5,13 +5,16 @@ from background_lvl2 import *
 from player import Player
 
 pygame.init()
+pygame.mixer.init()
 
 #create screen
 lvl2 = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Adding a player on the screen')
 backgroundmusic = pygame.mixer.Sound("assets/sound/The-Pink-Panther-Theme-Song.mp3")
 money_noise = pygame.mixer.Sound("assets/sound/money_noise.mp3")
-
+backgroundmusic.set_volume(0)
+caught_sound.set_volume(1)
+money_noise.set_volume(1)
 #clock object
 clock = pygame.time.Clock()
 #create a player
@@ -52,11 +55,11 @@ while running:
     if elapsed_seconds > timer_value:
         running = False
     if caught:
+        lives -= len(caught)
         pygame.mixer.Sound.play(caught_sound)
-        running = False
     if gains:
-        pygame.mixer.Sound.play(money_noise)
         score += len(gains)
+        pygame.mixer.Sound.play(money_noise)
         for _ in range(len(gains)):
             moneys.add(Money(random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 20),random.randint(TILE_SIZE, SCREEN_HEIGHT - 2 * TILE_SIZE)))
     for cash in moneys:
@@ -69,7 +72,7 @@ while running:
             enemies.remove(ops)  # remove the fish from the sprite group
             enemies.add(Enemy(random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 50),
                             random.randint(TILE_SIZE, SCREEN_HEIGHT - 2 * TILE_SIZE)))
-    pygame.mixer.Sound.play(backgroundmusic)
+    #pygame.mixer.Sound.play(backgroundmusic)
     lvl2.blit(background, (0, 0))
     score_text = custom_font.render(f"Score: {score}", True, timer_color)
     lvl2.blit(score_text, (SCREEN_WIDTH - 250, SCREEN_HEIGHT - 600))

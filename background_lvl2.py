@@ -16,7 +16,7 @@ MIN_SPEED = 0.5
 MAX_SPEED = 3.0
 PLAYER_SPEED = 5.0
 
-lives = 1
+lives = 2
 
 #create screen
 lvl2 = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
