@@ -19,13 +19,13 @@ money_noise.set_volume(1)
 clock = pygame.time.Clock()
 #create a player
 player = Player(0, SCREEN_HEIGHT-TILE_SIZE*5)
-add_enemies(3)
+add_enemies(5)
 add_money(6)
 #Main Loop
 running = True
 background = lvl2.copy()
 draw_background(background)
-while running:
+while lives >0 and running:
     milliseconds = pygame.time.get_ticks()
     elapsed_seconds = (milliseconds - prev_seconds) // 1000
     caught = pygame.sprite.spritecollide(player, enemies, True)

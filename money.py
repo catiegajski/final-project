@@ -18,6 +18,20 @@ class Money(pygame.sprite.Sprite):
     def update(self):
         self.x -= self.speed
         self.rect.x = self.x
+        if self.x > SCREEN_WIDTH- 2*TILE_SIZE:
+            self.x = SCREEN_WIDTH - 2*TILE_SIZE
+        if self.x < 0:
+            self.x = 0
+        if self.y < 0:
+            self.y = 0
+        if self.y > SCREEN_HEIGHT - TILE_SIZE :
+            self.y = (SCREEN_HEIGHT-TILE_SIZE)
+        #Doug Moloney Helped me limit the top restriction :)
+        if self.y < SCREEN_HEIGHT-5*TILE_SIZE:
+            self.y = (SCREEN_HEIGHT-5*TILE_SIZE)
+        self.rect.x = self.x
+        self.rect.y = self.y
+        self.rect.center = (self.x, self.y)
 
 
     def draw(self, lvl2):
