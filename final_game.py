@@ -13,7 +13,7 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
 # Fonts
-custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 60)
+custom_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 18)
 
 box_font = pygame.font.Font("assets/fonts/Black_Crayon.ttf", 25)
 
@@ -26,7 +26,7 @@ def draw_text(text, font, color, surface, x, y):
 
 while True:
     startmenu.fill(BLACK)
-    draw_text('THI3F', custom_font, RED, startmenu, 500, 50)
+    draw_text('THI3F - Use arrow keys to avoid cops, get to the right edge, and collect money at level 2! Pay attention to your lives!', custom_font, RED, startmenu, 25, 50)
 
     mouse_pos = pygame.mouse.get_pos()
 
